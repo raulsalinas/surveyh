@@ -230,7 +230,7 @@ function refresh_preguntas(tipo_encuesta){
         success: function(response){
             // console.log(response);
             preguntas= response;
-            // mostrar_pregunta(preguntas);
+            mostrar_pregunta(preguntas);
 
  
         }
