@@ -46,25 +46,25 @@
                 </div>
                 <a href=href="{{ route('profile.edit') }}" class="dropdown-item">
                     <i class="ni ni-single-02"></i>
-                    <span>My profile</span>
+                    <span>Mi perfil</span>
                 </a>
                 <a href="#" class="dropdown-item">
                     <i class="ni ni-settings-gear-65"></i>
-                    <span>Settings</span>
+                    <span>Configuración</span>
                 </a>
                 <a href="#" class="dropdown-item">
                     <i class="ni ni-calendar-grid-58"></i>
-                    <span>Activity</span>
+                    <span>Actividad</span>
                 </a>
                 <a href="#" class="dropdown-item">
                     <i class="ni ni-support-16"></i>
-                    <span>Support</span>
+                    <span>Soporte</span>
                 </a>
                 <div class="dropdown-divider"></div>
                 <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
                     <i class="ni ni-user-run"></i>
-                    <span>Logout</span>
+                    <span>Cerrar Sesión</span>
                 </a>
             </div>
         </li>
@@ -97,20 +97,20 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
-                    <i class="fab fa-laravel" style="color: #f4645f;"></i>
-                    <span class="nav-link-text" style="color: #f4645f;">Laravel Examples</span>
+                    <i class="fas fa-users" style="color: #168645;"></i>
+                    <span class="nav-link-text" style="color: #168645;">Usuario</span>
                 </a>
 
                 <div class="collapse show" id="navbar-examples">
                     <ul class="nav nav-sm flex-column">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('profile.edit') }}">
-                                User profile
+                                Perfil de Usuario
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('user.index') }}">
-                                User Management
+                                Gestionar Usuarios
                             </a>
                         </li>
                     </ul>
@@ -126,28 +126,7 @@
   
 
         </ul>
-        <!-- Divider -->
-        <hr class="my-3">
-        <!-- Heading -->
-        <h6 class="navbar-heading text-muted">Documentation</h6>
-        <!-- Navigation -->
-        <ul class="navbar-nav mb-md-3">
-            <li class="nav-item">
-                <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html">
-                    <i class="ni ni-spaceship"></i> Getting started
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html">
-                    <i class="ni ni-palette"></i> Foundation
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html">
-                    <i class="ni ni-ui-04"></i> Components
-                </a>
-            </li>
-        </ul>
+ 
     </div>
 </div>
 </nav>                
@@ -178,25 +157,25 @@
                 </div>
                 <a href="{{ route('profile.edit') }}" class="dropdown-item">
                     <i class="ni ni-single-02"></i>
-                    <span>My profile</span>
+                    <span>Mi Perfil</span>
                 </a>
                 <a href="#" class="dropdown-item">
                     <i class="ni ni-settings-gear-65"></i>
-                    <span>Settings</span>
+                    <span>Configuración</span>
                 </a>
                 <a href="#" class="dropdown-item">
                     <i class="ni ni-calendar-grid-58"></i>
-                    <span>Activity</span>
+                    <span>Actividad</span>
                 </a>
                 <a href="#" class="dropdown-item">
                     <i class="ni ni-support-16"></i>
-                    <span>Support</span>
+                    <span>Soporte</span>
                 </a>
                 <div class="dropdown-divider"></div>
                 <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
                     <i class="ni ni-user-run"></i>
-                    <span>Logout</span>
+                    <span>Cerrar Sesión</span>
                 </a>
             </div>
         </li>
@@ -205,97 +184,10 @@
 </nav>    
             <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
 <div class="container-fluid">
-    <div class="alert alert-danger" role="alert">
-        <strong>This is a PRO feature!</strong>
-      </div>
+
     <div class="header-body">
         <!-- Card stats -->
-        <div class="row">
-            <div class="col-xl-3 col-lg-6">
-                <div class="card card-stats mb-4 mb-xl-0">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <h5 class="card-title text-uppercase text-muted mb-0">Traffic</h5>
-                                <span class="h2 font-weight-bold mb-0">350,897</span>
-                            </div>
-                            <div class="col-auto">
-                                <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                                    <i class="fas fa-chart-bar"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="mt-3 mb-0 text-muted text-sm">
-                            <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                            <span class="text-nowrap">Since last month</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-6">
-                <div class="card card-stats mb-4 mb-xl-0">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <h5 class="card-title text-uppercase text-muted mb-0">New users</h5>
-                                <span class="h2 font-weight-bold mb-0">2,356</span>
-                            </div>
-                            <div class="col-auto">
-                                <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                                    <i class="fas fa-chart-pie"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="mt-3 mb-0 text-muted text-sm">
-                            <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>
-                            <span class="text-nowrap">Since last week</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-6">
-                <div class="card card-stats mb-4 mb-xl-0">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <h5 class="card-title text-uppercase text-muted mb-0">Sales</h5>
-                                <span class="h2 font-weight-bold mb-0">924</span>
-                            </div>
-                            <div class="col-auto">
-                                <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                                    <i class="fas fa-users"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="mt-3 mb-0 text-muted text-sm">
-                            <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
-                            <span class="text-nowrap">Since yesterday</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-6">
-                <div class="card card-stats mb-4 mb-xl-0">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>
-                                <span class="h2 font-weight-bold mb-0">49,65%</span>
-                            </div>
-                            <div class="col-auto">
-                                <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                                    <i class="fas fa-percent"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="mt-3 mb-0 text-muted text-sm">
-                            <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
-                            <span class="text-nowrap">Since last month</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+ 
     </div>
 </div>
 </div>
@@ -309,7 +201,7 @@
                             <h3 class="mb-0">Users</h3>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="" class="btn btn-sm btn-primary">Add user</a>
+                            <a href="" class="btn btn-sm btn-primary">Agregar Usuario</a>
                         </div>
                     </div>
                 </div>
@@ -321,9 +213,9 @@
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Creation Date</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Correo</th>
+                                <th scope="col">Fecha Creación</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
@@ -340,12 +232,12 @@
                                                 <i class="fas fa-ellipsis-v"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                                                                        <a class="dropdown-item" href="">Edit</a>
-                                                                                                </div>
+                                                    <a class="dropdown-item" href="">Editar</a>
+                                            </div>
                                         </div>
                                     </td>
                                 </tr>
-                                                        </tbody>
+                        </tbody>
                     </table>
                 </div>
                 <div class="card-footer py-4">
@@ -358,33 +250,11 @@
     </div>
         
     <footer class="footer">
-<div class="row align-items-center justify-content-xl-between">
-<div class="col-xl-6">
-    <div class="copyright text-center text-xl-left text-muted">
-        © 2020 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a> &amp;
-        <a href="https://www.updivision.com" class="font-weight-bold ml-1" target="_blank">Updivision</a>
-    </div>
+    @guest()
+            @include('layouts.footers.guest')
+        @endguest
+</footer>    
 </div>
-<div class="col-xl-6">
-    <ul class="nav nav-footer justify-content-center justify-content-xl-end">
-        <li class="nav-item">
-            <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
-        </li>
-        <li class="nav-item">
-            <a href="https://www.updivision.com" class="nav-link" target="_blank">Updivision</a>
-        </li>
-        <li class="nav-item">
-            <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
-        </li>
-        <li class="nav-item">
-            <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
-        </li>
-        <li class="nav-item">
-            <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md" class="nav-link" target="_blank">MIT License</a>
-        </li>
-    </ul>
-</div>
-</div></footer>    </div>
     </div>
 
     

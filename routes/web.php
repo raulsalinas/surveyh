@@ -38,6 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('configuracion/pregunta', ['as' => 'configuracion.pregunta', 'uses' => 'ConfiguracionController@configuracion_pregunta_index']);
 	Route::get('configuracion/tipo_encuesta', ['as' => 'configuracion.tipo_encuesta', 'uses' => 'ConfiguracionController@configuracion_tipo_encuesta_index']);
 	Route::get('configuracion/periodo', ['as' => 'configuracion.periodo', 'uses' => 'ConfiguracionController@configuracion_periodo_index']);
+	Route::get('get_tipo_encuesta_by_id/{id}', 'EncuestaController@get_tipo_encuesta_by_id');	
 
 	Route::get('get_pregunta', 'ConfiguracionController@get_pregunta');	
 	Route::get('get_pregunta/{id}', 'ConfiguracionController@get_pregunta_by_id');	

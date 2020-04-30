@@ -106,9 +106,16 @@ class EncuestaController extends Controller
    
     public function survey_form($tipo)
     {
+        if($tipo == 'satisfaccion'){
+            $id_tipo_encuesta=1;
+        }else if($tipo == 'liderazgo'){
+            $id_tipo_encuesta=2;
+        }
+
         $escalas = $this->get_escalas();
-        $tipo_encuesta = $this->get_tipo_encuesta($tipo);
+        $tipo_encuesta = $this->get_tipo_encuesta_by_id($id_tipo_encuesta);
         $preguntas = $this->get_preguntas_usuario($tipo_encuesta);
+        // $preguntas = [];
         $usuario =  Auth::user();
         return view('survey.form',compact('tipo_encuesta','escalas','preguntas', 'usuario'));
     }
@@ -122,10 +129,11 @@ class EncuestaController extends Controller
         return $escalas;
     }
 
-    function get_tipo_encuesta($tipo){
+    public function get_tipo_encuesta_by_id($tipo){
         $tipo_encuesta = DB::table('public.tipo_encuesta')
         ->select('tipo_encuesta.*')
-        ->where('tipo_encuesta.descripcion','ilike', '%'.$tipo.'%')
+        ->where('tipo_encuesta.id','=', $tipo)
+        // ->where('tipo_encuesta.descripcion','ilike', '%'.$tipo.'%')
         ->orderBy('tipo_encuesta.id', 'asc')
         ->first();
         return $tipo_encuesta;

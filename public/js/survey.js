@@ -2,6 +2,7 @@
 
 
 $(function(){    
+    // console.log(tipo_encuesta);
     document.querySelector("h3[id='title_survey']").textContent = 'Encuesta de '+tipo_encuesta.descripcion; // title 
     mostrar_pregunta_consecutiva(preguntas);
 
@@ -14,7 +15,7 @@ function mostrar_pregunta_consecutiva(preguntas){
     let primera_pregunta_id ='';
     let pendientes =0;
     let completadas =0;
-    console.log(preguntas);
+    // console.log(preguntas);
 
 
     for (let i = 0; i < preguntas.length; i++) {
@@ -194,6 +195,15 @@ function guardar_resulstado(){
                     // ok
                     alert('Se guardo con existo');
                     refresh_preguntas(tipo_encuesta);
+                    
+                    let customRadio = document.querySelectorAll("input[name='customRadio']")
+                     for( i = 0; i < customRadio.length; i++ ) {
+                        if( customRadio[i].checked ) {
+                            customRadio[i].checked=false;
+                        }
+                    }
+
+
                 }else{
                     alert('hubo un problema, se pudo guardar');
                 }
@@ -218,9 +228,9 @@ function refresh_preguntas(tipo_encuesta){
         dataType: 'JSON',
         data:tipo_encuesta,
         success: function(response){
-            console.log(response);
+            // console.log(response);
             preguntas= response;
-            mostrar_pregunta(preguntas);
+            // mostrar_pregunta(preguntas);
 
  
         }
