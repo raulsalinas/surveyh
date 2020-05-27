@@ -36,6 +36,7 @@ class EncuestaController extends Controller
         $session = Auth::user();
         $id_usuario = $session->id;
         $status=0;
+        $procentaje_avance=0;
 
         $preguntas = DB::table('public.pregunta')
         ->select('pregunta.*')
@@ -62,42 +63,50 @@ class EncuestaController extends Controller
         ->where('periodo.fecha_fin', '>=', $fecha_actual)
         ->get();
 
-        if($periodo->first()->id >0){
-            $respuesta = DB::table('public.respuesta')
-            ->select('respuesta.*')
-            ->where([
-                ['respuesta.id_usuario','=',  $id_usuario],
-                ['respuesta.id_periodo','=',  $periodo->first()->id]
-                ])
-            ->whereIn('respuesta.id_pregunta',$preguntas_id_list)
-            ->orderBy('respuesta.id', 'asc')
-            ->get();
+        if(count($periodo) >0){
+            if($periodo->first()->id >0){
+                $respuesta = DB::table('public.respuesta')
+                ->select('respuesta.*')
+                ->where([
+                    ['respuesta.id_usuario','=',  $id_usuario],
+                    ['respuesta.id_periodo','=',  $periodo->first()->id]
+                    ])
+                ->whereIn('respuesta.id_pregunta',$preguntas_id_list)
+                ->orderBy('respuesta.id', 'asc')
+                ->get();
+    
+                $respuestas_id_list=[];
+                if(count($respuesta)>0){
+                    $status=200;
+                    foreach($respuesta as $data){
+                        $respuestas_id_list[]=$data->id;
+                    }
+                    $total_preguntas=count($preguntas_id_list);
+                    $total_respuestas=count($respuestas_id_list);
+                    
+                    if($total_preguntas >0 && $total_respuestas >=0){
+                        $procentaje_avance= doubleval(number_format((($total_respuestas*100)/$total_preguntas),2));
+                    }else{
+                        $procentaje_avance=0;
+                    }
 
-            $respuestas_id_list=[];
-            if(count($respuesta)>0){
-                $status=200;
-                foreach($respuesta as $data){
-                    $respuestas_id_list[]=$data->id;
+                }else{
+                    $status=500;
+    
                 }
+    
             }else{
                 $status=500;
-
             }
-
         }else{
             $status=500;
+
         }
+
 
 
  
-        $total_preguntas=count($preguntas_id_list);
-        $total_respuestas=count($respuestas_id_list);
-        
-        if($total_preguntas >0 && $total_respuestas >=0){
-            $procentaje_avance= doubleval(number_format((($total_respuestas*100)/$total_preguntas),2));
-        }else{
-            $procentaje_avance=0;
-        }
+
 
         $ouput=['status'=> $status, 'porcentaje_avance'=>$procentaje_avance];
         return $ouput;

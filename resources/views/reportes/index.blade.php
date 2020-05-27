@@ -22,12 +22,12 @@
                                         <table class="table align-items-center" id="resultadosPeriodoActualTable" style="margin-left: -100px; position:relative;">
                                             <thead class="thead-light">
                                                 <tr>
+                                                    <th>id</th>
+                                                    <th>Pregunta</th>
+                                                    <th>Respuesta</th>
                                                     <th>Usuario</th>
-                                                    <th>Completadas</th>
-                                                    <th>Avance</th>
-                                                    <th>Avance</th>
-                                                    <th>Avance</th>
-                                                    <th>Avance</th>
+                                                    <th>Fecha Inicio</th>
+                                                    <th>Fecha Fin</th>
                                                 </tr>
                                             </thead>
                                             <tbody></tbody>

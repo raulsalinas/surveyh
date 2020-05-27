@@ -34,10 +34,6 @@
                         <i class="ni ni-calendar-grid-58"></i>
                         <span>{{ __('Actvidad') }}</span>
                     </a>
-                    <a href="#" class="dropdown-item">
-                        <i class="ni ni-support-16"></i>
-                        <span>{{ __('soporte') }}</span>
-                    </a>
                     <div class="dropdown-divider"></div>
                     <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">

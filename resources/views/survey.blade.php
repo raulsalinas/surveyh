@@ -26,7 +26,7 @@
                     <div class="card card-box" >
                         <img class="card-img-top" src="/argon/img/survey/in_the_office.svg" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Liderazgo de Liderazgo</h5>
+                            <h5 class="card-title">Liderazgo</h5>
                             <h4 class="card-title" id="porcentaje_avance_encuesta_liderazgo">{{$procentaje_avance_encuesta_liderazgo['porcentaje_avance']}}%</h4>
                         </div>
                     </div>
