@@ -27,8 +27,9 @@ class EncuestaController extends Controller
     {   
         $procentaje_avance_encuesta_satisfaccion= $this->procentaje_avance_encuesta(1);
         $procentaje_avance_encuesta_liderazgo= $this->procentaje_avance_encuesta(2);
+        $hasPeriodo= $this->existePeriodo();
         
-        return view('survey',compact('procentaje_avance_encuesta_satisfaccion','procentaje_avance_encuesta_liderazgo'));
+        return view('survey',compact('procentaje_avance_encuesta_satisfaccion','procentaje_avance_encuesta_liderazgo','hasPeriodo'));
 
      }
 
@@ -150,6 +151,16 @@ class EncuestaController extends Controller
 
     }
 
+    function existePeriodo(){
+        $fecha_actual=date('Y-m-d');
+        $periodo = DB::table('public.periodo')
+        ->select('periodo.*')
+        ->where('periodo.fecha_inicio', '<=', $fecha_actual)
+        ->where('periodo.fecha_fin', '>=', $fecha_actual)
+        ->get();
+        return $periodo;
+    }
+
     function get_encuesta_respondida($id_tipo_encuesta){
         $session = Auth::user();
         $id_usuario = $session->id;
@@ -192,14 +203,20 @@ class EncuestaController extends Controller
         ->whereIn('respuesta.id_periodo', $id_periodo_list)
         ->get();
 
- 
         return $respuesta;
     }
 
     function refresh_preguntas_usuario(Request $request){
-       $preguntas = $this->get_preguntas_usuario($request);
-        return response()->json($preguntas);
-
+        $output=[];
+        if(count($this->existePeriodo())>0){
+            $result = $this->get_preguntas_usuario($request);
+            $hasPeriodo=true;
+        }else{
+            $hasPeriodo=false;
+            $result = [];
+        }
+        $output = ['hasPeriodo'=>$hasPeriodo,'data'=>$result ];
+        return response()->json($output);
     }
     
     function get_preguntas_usuario($tipo_encuesta){

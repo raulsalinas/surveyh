@@ -34,6 +34,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('get_user', 'EncuestaController@get_user');	
 	Route::post('guardar_respuesta', 'EncuestaController@guardar_respuesta');	
 	Route::get('refresh_preguntas_usuario', 'EncuestaController@refresh_preguntas_usuario');	
+	Route::get('existe_periodo', 'EncuestaController@existePeriodo');	
 	Route::get('procentaje_avance_encuesta/{idtipo}', 'EncuestaController@procentaje_avance_encuesta');	
 	Route::get('configuracion/pregunta', ['as' => 'configuracion.pregunta', 'uses' => 'ConfiguracionController@configuracion_pregunta_index']);
 	Route::get('configuracion/tipo_encuesta', ['as' => 'configuracion.tipo_encuesta', 'uses' => 'ConfiguracionController@configuracion_tipo_encuesta_index']);

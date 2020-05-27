@@ -4,7 +4,7 @@
     @include('layouts.headers.main')
     
     <div class="container-fluid mt--9">
-        <div class="row">
+        <div class="row" id="contenedor_tipo_encuesta">
             <div class="col-xl-6 mb-5 mb-xl-0">
                 <section>
                 <a href="{{ route('survey.form','satisfaccion') }}">
@@ -44,5 +44,14 @@
 @endsection
 
 @push('js')
- 
+<script>
+    if(({!! json_encode($hasPeriodo) !!}).length >0){
+        console.log('ok');
+    }else{
+        alert('Actualmente no existe un periodo definido para iniciar la encuesta, espere que el administrador inicie un nuevo periodo');
+        
+        document.querySelectorAll("div[id='contenedor_tipo_encuesta'] section a")[0].removeAttribute('href')
+        document.querySelectorAll("div[id='contenedor_tipo_encuesta'] section a")[1].removeAttribute('href')
+    }
+</script>
 @endpush

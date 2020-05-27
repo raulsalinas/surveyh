@@ -229,8 +229,12 @@ function refresh_preguntas(tipo_encuesta){
         data:tipo_encuesta,
         success: function(response){
             // console.log(response);
-            preguntas= response;
-            mostrar_pregunta(preguntas);
+            if(response.hasPeriodo == true){
+                preguntas= response.data;
+                mostrar_pregunta(preguntas);
+            }else if(response.hasPeriodo == false){
+                alert('no existe un periodo definido actualmente');
+            }
 
  
         }
